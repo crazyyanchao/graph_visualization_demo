@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3V5曲线关系图</title>
+    <link href="d3.v4/css/neo4jd3.css" rel="stylesheet">
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="http://d3js.org/d3.v4.min.js"></script> -->
+    <script src="d3.v4/d3.v4.min.js"></script>
+    <script src="d3.v4/graph.js"></script>
+    <style>
+        /* 按钮样式 */
+        #optionBtn {
+            position: fixed;
+            right: 1vh;
+        }
+        #drawBtn {
+            position: fixed;
+            right: 1vh;
+            top:3vw;
+        }
+        #optionDiv{
+            width:100vw;
+            display:none;
+        }
+        #optionDiv textarea{
+            width: 88vw;
+            height: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="optionBtn">选项开关</button>
+    <button id="drawBtn">绘制</button>
+    <div id="optionDiv">
+        <div>
+                数据输入
+                <textarea id="dataArea">{"graph":{"nodes":[{"id":"1","properties":{"url":"https://weibocom/u/5000389049","name":"0浪尖战狼0"}},{"id":"2","properties":{"url":"https://weibocom/u/3075672645","name":"立顶Grace"}},{"id":"3","properties":{"url":"https://weibocom/u/6455117795","name":"国王陛下1234"}},{"id":"4","properties":{"url":"https://weibocom/500639393","name":"润斋"}},{"id":"5","properties":{"url":"https://weibocom/u/6351465798","name":"Iam李俊呈"}},{"id":"6","properties":{"url":"https://weibocom/u/6846302927","name":"zhangdong1728"}},{"id":"7","properties":{"url":"https://weibocom/u/5520368321","name":"夜灬微醺"}},{"id":"8","properties":{"url":"https://weibocom/u/1663145407","name":"zhqing"}},{"id":"9","properties":{"url":"https://weibocom/u/3229588507","name":"绿城好一哥"}},{"id":"10","properties":{"url":"https://weibocom/u/2650031017","name":"壮士干了这碗肉0917"}},{"id":"11","properties":{"url":"https://weibocom/u/5175249082","name":"孫小頴"}},{"id":"12","properties":{"url":"https://weibocom/u/2709212253","name":"有谁能救一颗以死掉心"}},{"id":"13","properties":{"url":"https://weibocom/u/6871962843","name":"不要沉默wx"}},{"id":"14","properties":{"url":"https://weibocom/u/3281929227","name":"手机用户3281929227"}},{"id":"15","properties":{"url":"https://weibocom/u/6868496758","name":"候鸟72959"}},{"id":"16","properties":{"url":"https://weibocom/52qinglinyi","name":"张小猫的快乐生活"}},{"id":"17","properties":{"url":"https://weibocom/u/5859747954","name":"开心玫瑰一枝花"}},{"id":"18","properties":{"url":"https://weibocom/u/1931725163","name":"浪子民軍"}},{"id":"19","properties":{"url":"https://weibocom/u/5475013842","name":"青草30441"}},{"id":"20","properties":{"url":"https://weibocom/u/6846484184","name":"塞上一枝"}},{"id":"21","properties":{"url":"https://weibocom/u/1921639747","name":"手机用户1921639747"}},{"id":"22","properties":{"url":"https://weibocom/u/3218840477","name":"双鱼--杰仔"}},{"id":"23","properties":{"url":"https://weibocom/u/6850209083","name":"用户6850209083"}},{"id":"24","properties":{"url":"https://weibocom/u/6116940351","name":"用户6116940351晋商贷出借人"}},{"id":"25","properties":{"url":"https://weibocom/u/7006381254","name":"武清333"}},{"id":"26","properties":{"url":"https://weibocom/p/1005053368512180/home","name":"轩泽_PA1"}},{"id":"27","properties":{"url":"https://weibocom/u/6364827100","name":"学海199904"}},{"id":"28","properties":{"url":"https://weibocom/p/1005056872549560","name":"一缕阳光6872549560"}},{"id":"29","properties":{"url":"https://weibocom/u/5321858416","name":"用户5321858416"}},{"id":"30","properties":{"url":"https://weibocom/u/5539875245","name":"用户5539875245"}},{"id":"31","properties":{"url":"https://weibocom/u/6079612811","name":"用户6079612811"}},{"id":"32","properties":{"url":"https://weibocom/u/5936620916","name":"有一个地方很神令"}},{"id":"33","properties":{"url":"https://weibocom/ht0357","name":"掌上洪洞"}},{"id":"34","properties":{"url":"https://weibocom/u/5480449181","name":"行路的人1985"}},{"id":"35","properties":{"url":"https://weibocom/diyiwangdai","name":"第一网贷"}},{"id":"36","properties":{"url":"https://weibocom/u/3733307657","name":"向晓zd"}}],"relationships":[{"type":"转发","properties":{"times":"1.0"},"startNode":"1","endNode":"2"},{"type":"转发","properties":{"times":"1.0"},"startNode":"1","endNode":"3"},{"type":"转发","properties":{"times":"2.0"},"startNode":"1","endNode":"4"},{"type":"转发","properties":{"times":"1.0"},"startNode":"5","endNode":"5"},{"type":"转发","properties":{"times":"1.0"},"startNode":"6","endNode":"7"},{"type":"转发","properties":{"times":"2.0"},"startNode":"6","endNode":"6"},{"type":"转发","properties":{"times":"2.0"},"startNode":"6","endNode":"2"},{"type":"转发","properties":{"times":"5.0"},"startNode":"6","endNode":"3"},{"type":"转发","properties":{"times":"1.0"},"startNode":"8","endNode":"4"},{"type":"转发","properties":{"times":"1.0"},"startNode":"8","endNode":"9"},{"type":"转发","properties":{"times":"1.0"},"startNode":"8","endNode":"10"},{"type":"转发","properties":{"times":"1.0"},"startNode":"8","endNode":"8"},{"type":"转发","properties":{"times":"1.0"},"startNode":"8","endNode":"11"},{"type":"转发","properties":{"times":"3.0"},"startNode":"8","endNode":"5"},{"type":"转发","properties":{"times":"4.0"},"startNode":"8","endNode":"12"},{"type":"转发","properties":{"times":"7.0"},"startNode":"8","endNode":"2"},{"type":"转发","properties":{"times":"9.0"},"startNode":"8","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"13","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"13","endNode":"14"},{"type":"转发","properties":{"times":"1.0"},"startNode":"13","endNode":"3"},{"type":"转发","properties":{"times":"81.0"},"startNode":"3","endNode":"3"},{"type":"转发","properties":{"times":"3.0"},"startNode":"15","endNode":"10"},{"type":"转发","properties":{"times":"3.0"},"startNode":"15","endNode":"16"},{"type":"转发","properties":{"times":"7.0"},"startNode":"15","endNode":"15"},{"type":"转发","properties":{"times":"9.0"},"startNode":"15","endNode":"7"},{"type":"转发","properties":{"times":"14.0"},"startNode":"15","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"17","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"18","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"18","endNode":"18"},{"type":"转发","properties":{"times":"1.0"},"startNode":"2","endNode":"12"},{"type":"转发","properties":{"times":"7.0"},"startNode":"2","endNode":"2"},{"type":"转发","properties":{"times":"16.0"},"startNode":"2","endNode":"5"},{"type":"转发","properties":{"times":"1.0"},"startNode":"9","endNode":"6"},{"type":"转发","properties":{"times":"2.0"},"startNode":"9","endNode":"16"},{"type":"转发","properties":{"times":"2.0"},"startNode":"9","endNode":"12"},{"type":"转发","properties":{"times":"2.0"},"startNode":"9","endNode":"4"},{"type":"转发","properties":{"times":"2.0"},"startNode":"9","endNode":"11"},{"type":"转发","properties":{"times":"3.0"},"startNode":"9","endNode":"3"},{"type":"转发","properties":{"times":"5.0"},"startNode":"9","endNode":"10"},{"type":"转发","properties":{"times":"8.0"},"startNode":"9","endNode":"2"},{"type":"转发","properties":{"times":"12.0"},"startNode":"9","endNode":"7"},{"type":"转发","properties":{"times":"13.0"},"startNode":"9","endNode":"5"},{"type":"转发","properties":{"times":"45.0"},"startNode":"9","endNode":"9"},{"type":"转发","properties":{"times":"1.0"},"startNode":"19","endNode":"19"},{"type":"转发","properties":{"times":"14.0"},"startNode":"19","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"4","endNode":"2"},{"type":"转发","properties":{"times":"1.0"},"startNode":"4","endNode":"10"},{"type":"转发","properties":{"times":"2.0"},"startNode":"4","endNode":"7"},{"type":"转发","properties":{"times":"10.0"},"startNode":"4","endNode":"4"},{"type":"转发","properties":{"times":"2.0"},"startNode":"20","endNode":"5"},{"type":"转发","properties":{"times":"8.0"},"startNode":"20","endNode":"20"},{"type":"转发","properties":{"times":"9.0"},"startNode":"20","endNode":"2"},{"type":"转发","properties":{"times":"10.0"},"startNode":"20","endNode":"12"},{"type":"转发","properties":{"times":"12.0"},"startNode":"20","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"21","endNode":"5"},{"type":"转发","properties":{"times":"2.0"},"startNode":"21","endNode":"21"},{"type":"转发","properties":{"times":"1.0"},"startNode":"14","endNode":"12"},{"type":"转发","properties":{"times":"9.0"},"startNode":"14","endNode":"14"},{"type":"转发","properties":{"times":"1.0"},"startNode":"22","endNode":"14"},{"type":"转发","properties":{"times":"1.0"},"startNode":"11","endNode":"23"},{"type":"转发","properties":{"times":"1.0"},"startNode":"11","endNode":"24"},{"type":"转发","properties":{"times":"1.0"},"startNode":"11","endNode":"5"},{"type":"转发","properties":{"times":"1.0"},"startNode":"11","endNode":"12"},{"type":"转发","properties":{"times":"2.0"},"startNode":"11","endNode":"7"},{"type":"转发","properties":{"times":"2.0"},"startNode":"11","endNode":"16"},{"type":"转发","properties":{"times":"2.0"},"startNode":"11","endNode":"2"},{"type":"转发","properties":{"times":"4.0"},"startNode":"11","endNode":"11"},{"type":"转发","properties":{"times":"5.0"},"startNode":"11","endNode":"10"},{"type":"转发","properties":{"times":"5.0"},"startNode":"25","endNode":"25"},{"type":"转发","properties":{"times":"1.0"},"startNode":"26","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"26","endNode":"5"},{"type":"转发","properties":{"times":"1.0"},"startNode":"26","endNode":"26"},{"type":"转发","properties":{"times":"1.0"},"startNode":"27","endNode":"10"},{"type":"转发","properties":{"times":"3.0"},"startNode":"27","endNode":"5"},{"type":"转发","properties":{"times":"3.0"},"startNode":"27","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"7","endNode":"10"},{"type":"转发","properties":{"times":"2.0"},"startNode":"7","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"28","endNode":"3"},{"type":"转发","properties":{"times":"2.0"},"startNode":"29","endNode":"3"},{"type":"转发","properties":{"times":"2.0"},"startNode":"29","endNode":"12"},{"type":"转发","properties":{"times":"3.0"},"startNode":"29","endNode":"29"},{"type":"转发","properties":{"times":"4.0"},"startNode":"30","endNode":"30"},{"type":"转发","properties":{"times":"3.0"},"startNode":"31","endNode":"31"},{"type":"转发","properties":{"times":"1.0"},"startNode":"24","endNode":"23"},{"type":"转发","properties":{"times":"1.0"},"startNode":"24","endNode":"2"},{"type":"转发","properties":{"times":"2.0"},"startNode":"24","endNode":"10"},{"type":"转发","properties":{"times":"2.0"},"startNode":"24","endNode":"4"},{"type":"转发","properties":{"times":"2.0"},"startNode":"24","endNode":"12"},{"type":"转发","properties":{"times":"3.0"},"startNode":"24","endNode":"5"},{"type":"转发","properties":{"times":"4.0"},"startNode":"24","endNode":"11"},{"type":"转发","properties":{"times":"4.0"},"startNode":"24","endNode":"7"},{"type":"转发","properties":{"times":"46.0"},"startNode":"24","endNode":"24"},{"type":"转发","properties":{"times":"1.0"},"startNode":"23","endNode":"12"},{"type":"转发","properties":{"times":"1.0"},"startNode":"23","endNode":"4"},{"type":"转发","properties":{"times":"1.0"},"startNode":"32","endNode":"32"},{"type":"转发","properties":{"times":"2.0"},"startNode":"16","endNode":"5"},{"type":"转发","properties":{"times":"8.0"},"startNode":"33","endNode":"33"},{"type":"转发","properties":{"times":"1.0"},"startNode":"10","endNode":"7"},{"type":"转发","properties":{"times":"1.0"},"startNode":"10","endNode":"4"},{"type":"转发","properties":{"times":"1.0"},"startNode":"10","endNode":"16"},{"type":"转发","properties":{"times":"1.0"},"startNode":"10","endNode":"34"},{"type":"评论","properties":{"times":"1.0"},"startNode":"5","endNode":"9"},{"type":"评论","properties":{"times":"1.0"},"startNode":"5","endNode":"5"},{"type":"评论","properties":{"times":"1.0"},"startNode":"5","endNode":"4"},{"type":"评论","properties":{"times":"3.0"},"startNode":"5","endNode":"16"},{"type":"评论","properties":{"times":"4.0"},"startNode":"5","endNode":"2"},{"type":"评论","properties":{"times":"1.0"},"startNode":"8","endNode":"8"},{"type":"评论","properties":{"times":"2.0"},"startNode":"35","endNode":"25"},{"type":"评论","properties":{"times":"44.0"},"startNode":"35","endNode":"35"},{"type":"评论","properties":{"times":"1.0"},"startNode":"3","endNode":"11"},{"type":"评论","properties":{"times":"1.0"},"startNode":"3","endNode":"13"},{"type":"评论","properties":{"times":"7.0"},"startNode":"3","endNode":"3"},{"type":"评论","properties":{"times":"1.0"},"startNode":"34","endNode":"34"},{"type":"评论","properties":{"times":"5.0"},"startNode":"15","endNode":"15"},{"type":"评论","properties":{"times":"2.0"},"startNode":"18","endNode":"18"},{"type":"评论","properties":{"times":"1.0"},"startNode":"2","endNode":"8"},{"type":"评论","properties":{"times":"2.0"},"startNode":"2","endNode":"2"},{"type":"评论","properties":{"times":"2.0"},"startNode":"2","endNode":"20"},{"type":"评论","properties":{"times":"3.0"},"startNode":"9","endNode":"9"},{"type":"评论","properties":{"times":"2.0"},"startNode":"4","endNode":"1"},{"type":"评论","properties":{"times":"142.0"},"startNode":"4","endNode":"4"},{"type":"评论","properties":{"times":"6.0"},"startNode":"20","endNode":"20"},{"type":"评论","properties":{"times":"3.0"},"startNode":"21","endNode":"21"},{"type":"评论","properties":{"times":"4.0"},"startNode":"14","endNode":"14"},{"type":"评论","properties":{"times":"3.0"},"startNode":"22","endNode":"22"},{"type":"评论","properties":{"times":"6.0"},"startNode":"11","endNode":"11"},{"type":"评论","properties":{"times":"5.0"},"startNode":"25","endNode":"25"},{"type":"评论","properties":{"times":"1.0"},"startNode":"36","endNode":"20"},{"type":"评论","properties":{"times":"1.0"},"startNode":"36","endNode":"28"},{"type":"评论","properties":{"times":"1.0"},"startNode":"7","endNode":"26"},{"type":"评论","properties":{"times":"1.0"},"startNode":"7","endNode":"11"},{"type":"评论","properties":{"times":"2.0"},"startNode":"7","endNode":"10"},{"type":"评论","properties":{"times":"3.0"},"startNode":"7","endNode":"7"},{"type":"评论","properties":{"times":"5.0"},"startNode":"7","endNode":"8"},{"type":"评论","properties":{"times":"6.0"},"startNode":"7","endNode":"15"},{"type":"评论","properties":{"times":"1.0"},"startNode":"29","endNode":"29"},{"type":"评论","properties":{"times":"13.0"},"startNode":"30","endNode":"30"},{"type":"评论","properties":{"times":"5.0"},"startNode":"31","endNode":"31"},{"type":"评论","properties":{"times":"13.0"},"startNode":"24","endNode":"24"},{"type":"评论","properties":{"times":"1.0"},"startNode":"12","endNode":"11"},{"type":"评论","properties":{"times":"1.0"},"startNode":"12","endNode":"12"},{"type":"评论","properties":{"times":"1.0"},"startNode":"12","endNode":"18"},{"type":"评论","properties":{"times":"1.0"},"startNode":"12","endNode":"28"},{"type":"评论","properties":{"times":"1.0"},"startNode":"32","endNode":"32"},{"type":"评论","properties":{"times":"1.0"},"startNode":"16","endNode":"5"},{"type":"评论","properties":{"times":"3.0"},"startNode":"16","endNode":"16"},{"type":"评论","properties":{"times":"15.0"},"startNode":"33","endNode":"33"},{"type":"评论","properties":{"times":"1.0"},"startNode":"10","endNode":"10"}]}}</textarea>
+        </div>
+        <div>
+            节点间距:<input id="minCollision" value="80">
+            节点半径:<input id="nodeRadius" value="25">
+            头像位置X:<input id="nodeX" value="-15">
+            头像位置Y:<input id="nodeY" value="-20">
+            关系线颜色:<input id="linkColor" value="#ef8d0a">
+        </div>
+        <div>
+                线宽:<input id="linkWidth" value="2">
+                 线上文字颜色:<input id="linkTextColor" value="#ef8d0a">
+                线文字大小:<input id="linkTextSize" value="2">
+                节点文字颜色:<input id="nodeTextColor" value="#1862d5">
+                节点文字大小:<input id= "nodeTextSize" value="20">
+        </div>
+
+    </div>
+    <!-- 图谱容器 -->
+    <div id="neo4jd3" style="height: 100vh;width: 100vw;">
+    </div>
+    <script>
+        //配置选项开关
+        $("#optionBtn").off("click").on("click",function(){
+            $("#optionDiv").toggle();
+        })
+        neo = init('#neo4jd3', getParams()); //初始化图形
+        //绘制按钮
+        $("#drawBtn").off("click").on("click",function(){
+            //绘图初始化
+            graphInit();
+            //参数获取
+            var option = getParams();
+            //neo.updateWithNeo4jData(option.neo4jData);
+            neo = init('#neo4jd3', getParams()); 
+        })
+        function getParams() {
+            //初始化配置
+            var option = {
+                minCollision: $("#minCollision").val()?$("#minCollision").val():80,  //点间距
+                nodeRadius: $("#nodeRadius").val()?$("#nodeRadius").val():25, //节点半径
+                nodeY: $("#nodeY").val()?$("#nodeY").val():-20, //头像位置Y
+                nodeX: $("#nodeX").val()?$("#nodeX").val():-15, //头像位置X
+                linkColor:$("#linkColor").val()?$("#linkColor").val():"#ef8d0a", //线颜色
+                linkWidth:$("#linkWidth").val()?$("#linkWidth").val():2, //线宽
+                linkTextColor:$("#linkTextColor").val()?$("#linkTextColor").val():"#ef8d0a",//线上文字颜色
+                linkTextSize:$("#linkTextSize").val()?$("#linkTextSize").val():2, //线文字大小
+                nodeTextColor:$("#nodeTextColor").val()?$("#nodeTextColor").val():"#1862d5", //节点文字颜色
+                nodeTextSize:$("#nodeTextSize").val()?$("#nodeTextSize").val():20 //节点文字大小
+            }
+            if($("#dataArea").val()){
+                var dataArea = JSON.parse($("#dataArea").val());
+                option.neo4jData = {"results":[{"data":[dataArea]}]}
+            }
+            return option;
+        }
+        /**
+         * 绘图初始化
+         */
+        function graphInit() {
+            neo.node.remove();
+            neo.relationship.remove();
+            neo.node._groups[0] = [];
+            neo.nodes = [];
+            neo.relationships = [];
+            neo.relationship._groups[0] = [];
+        }
+        
+    </script>
+</body>
+
+</html>
